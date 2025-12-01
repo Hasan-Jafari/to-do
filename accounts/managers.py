@@ -15,7 +15,7 @@ class UserManager(BaseUserManager):
         else:
             user.set_unusable_password()
             
-        user.save(self._db)
+        user.save(using=self._db)
         return user
     
     def create_superuser(self, phone_number, password):
